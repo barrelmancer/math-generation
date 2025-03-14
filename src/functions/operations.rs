@@ -46,6 +46,7 @@ impl Operations for Quadratic {
         )
     }
     fn show(&self) -> String {
+        println!("{}", self.b);
         let mut result = String::from("y = ");
         if self.a != 1.0 && self.a != -1.0 {
             result += &self.a.to_string();
@@ -57,9 +58,9 @@ impl Operations for Quadratic {
             } else {
                 result += " - ";
             }
-            if self.b > 1.0 {
+            if self.b > 0.0 && self.b != 1.0 {
                 result += &self.b.to_string();
-            } else if self.b < -1.0 {
+            } else if self.b < 0.0 && self.b != -1.0 {
                 result += &(-self.b).to_string();
             }
             result += "x";
