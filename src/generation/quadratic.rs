@@ -12,7 +12,8 @@ pub struct Quadratic {
 impl Quadratic {
     pub fn new(r: RandRange) -> Quadratic {
         let mut rng = rand::rng();
-        let a = if rng.random_range(r.min..r.max) == 0 { 1 } else { rng.random_range(r.min..r.max) };
+        let e = rng.random_range(r.min..r.max);
+        let a = if e == 0 { 1 } else { e };
         let b = rng.random_range(r.min..r.max);
         let c = rng.random_range(r.min..r.max);
         Quadratic { a, b, c }

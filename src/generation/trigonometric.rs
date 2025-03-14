@@ -20,7 +20,8 @@ pub struct Trigonometric {
 impl Trigonometric {
     pub fn new(r: RandRange, ftype: TrigType) -> Trigonometric {
         let mut rng = rand::rng();
-        let a = if rng.random_range((r.min as f32)..(r.max as f32)) == 0.0 { 1.0 } else { rng.random_range((r.min as f32)..(r.max as f32)) };
+        let e = rng.random_range((r.min as f32)..(r.max as f32));
+        let a = if e == 0.0 { 1.0 } else { e };
         let b = rng.random_range((r.min as f32)..(r.max as f32));
         let c = rng.random_range((r.min as f32)..(r.max as f32));
         let d = rng.random_range((r.min as f32)..(r.max as f32));
